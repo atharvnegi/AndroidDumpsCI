@@ -36,8 +36,8 @@ jobs:
          run: |
               git config --global credential.helper store
               export GITHUB_TOKEN="${{ secrets.GIT_TOKEN }}"
-              echo https://Sushrut1101:"${GITHUB_TOKEN}"@github.com >> ~/.git-credentials
-              git clone https://github.com/DumprX/DumprX-Dev.git DumprX
+              echo https://atharvnegi:"${GITHUB_TOKEN}"@github.com >> ~/.git-credentials
+              git clone https://github.com/DumprX/DumprX.git DumprX
 
        - name: Setup DumprX's Environment
          working-directory: DumprX
@@ -47,8 +47,9 @@ jobs:
               mkdir -p ~/.ssh
               ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
               ssh-keyscan -t rsa gitlab.com >> ~/.ssh/known_hosts
-              git config --global user.name "Sushrut1101"
-              git config --global user.email "guptasushrut@gmail.com"
+              ssh-keyscan -t rsa gitgud.io >> ~/.ssh/known_hosts
+              git config --global user.name "atharvnegi"
+              git config --global user.email "atharvnegi2951@gmail.com"
 
        - name: Setup Config envs
          working-directory: DumprX
